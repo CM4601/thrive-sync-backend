@@ -64,8 +64,8 @@ def SimpleGeneticAlgorithm(data, designation_no, no_generations, no_of_parent_sa
 
       sorted_combinations = sort_combinations_by_score_and_diff(filtered_combinations)
 
-      if cal_pop_resource_distribution(sorted_combinations, diff_threshold) == False:
-        continue
+      # if cal_pop_resource_distribution(sorted_combinations, diff_threshold) == False:
+      #   continue
 
       if len(sorted_combinations) != 0:
         final_pool = select_final_pool(sorted_combinations)
