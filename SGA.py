@@ -26,11 +26,15 @@ def SimpleGeneticAlgorithm(data, designation_no, no_generations, no_of_parent_sa
   mating_pool_size = no_of_parent_samples / 2
 
   parent_population = data.sample(n=no_of_parent_samples).to_numpy()
+  pop_to_binary(parent_population)
 
   sum_hours = sum([x[1] for x in parent_population])
 
   population_weights = get_feature_weights(designation_no)
 
+  parent_scores = cal_fitness_score(population_weights, pop_to_binary(parent_population))
+  mean_parent_scores = sum(parent_scores)/len(parent_scores)
+  
   for i in range(no_generations):
     found_offspring_pool = False
 
@@ -76,4 +80,4 @@ def SimpleGeneticAlgorithm(data, designation_no, no_generations, no_of_parent_sa
   mean_score = total_scores/offspring_pool_size
   print(f"mean_score: {mean_score}")
 
-  return final_pool['combinations'], mean_score
+  return final_pool['combinations'], mean_score, mean_parent_scores

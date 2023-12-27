@@ -89,8 +89,8 @@ def generate_team():
       
       pre_processed_data = sga_pre_processor(csv_file= csv_file, designation= designation)
       try:
-        final_pool, mean_score = func_timeout(6, SimpleGeneticAlgorithm, args=(pre_processed_data, designation, no_generations))
-        return jsonify({ "status": 200, "respone": { "final_pool": final_pool, "mean_score": mean_score } })
+        final_pool, mean_score, mean_parent_scores = func_timeout(6, SimpleGeneticAlgorithm, args=(pre_processed_data, designation, no_generations))
+        return jsonify({ "status": 200, "respone": { "final_pool": final_pool, "mean_score": mean_score, "mean_parent_scores": mean_parent_scores } })
       
       except FunctionTimedOut:
         return jsonify({"message": "Function timed out after 1 minute."}), 504
