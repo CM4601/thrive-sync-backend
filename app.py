@@ -2,7 +2,7 @@ import numpy as np
 from flask_cors import CORS, cross_origin
 from flask import Flask, request, jsonify
 from model_loader import loader
-from error_handler import NoDesignationError, NoWFHSetupAvailabilityError, NoResourceAllocationError, NoMentalFatigueScoreError, NoCSVFileError
+from error_handler import *
 
 # Iniatlize a Flask app
 app = Flask('app')
@@ -81,6 +81,9 @@ def generate_team():
       if 'Designation' not in request.form:
         raise NoDesignationError
       
+      if 'Number of generations' not in request.form:
+        raise NoNumGenerationsError
+      
       respone = [
         [-1.0, 7.0, 6.1],
         [1.0, 4.0, 6.0],
@@ -111,6 +114,9 @@ def generate_team():
 
     except NoDesignationError as des:
       return jsonify({"status": 500, "message": str(des)})
+    
+    except NoNumGenerationsError as nog:
+      return jsonify({"status": 500, "message": str(nog)})
 
 # Run the app
 if __name__ == '__main__':

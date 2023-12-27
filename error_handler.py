@@ -17,3 +17,7 @@ class NoMentalFatigueScoreError(Exception):
 class NoCSVFileError(Exception):
     "No CSV file found in the request"
     pass
+
+class NoNumGenerationsError(Exception):
+    "No Number of generations found in the request"
+    pass

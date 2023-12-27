@@ -28,11 +28,11 @@ except ValueError:
 
 api_endpoint = 'http://localhost:5000/api/generateTeam'
 
-csv_file_path = 'test.csv'
+csv_file_path = 'test/test.csv'
 
 # Create FormData-like structure
 files = {'csv_file': ('test.csv', open(csv_file_path, 'rb'), 'text/csv')}
-data = {'Designation': str(designation)}
+data = {'Designation': str(designation), 'Number of generations': 100}
 
 # Make a POST request to the Flask API endpoint
 response = requests.post(api_endpoint, files=files, data=data)
