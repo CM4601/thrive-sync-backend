@@ -52,7 +52,7 @@ def burn_out_predict():
     prediction = model.predict(new_data)
 
     if prediction:
-      return jsonify({ "status": 200, "prediction": prediction })
+      return jsonify({ "status": 200, "prediction": prediction[0] })
     else:
       return jsonify({ "status": 400, "messege": "Response failed at backend" })
     
@@ -73,6 +73,7 @@ def generate_team():
     try:
       csv_file = request.files['csv_file']
       designation = int(request.form['Designation'])
+      no_generations = int(request.form['Number of generations'])
 
       if 'csv_file' not in request.files:
         raise NoCSVFileError
