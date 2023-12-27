@@ -76,4 +76,4 @@ def SimpleGeneticAlgorithm(data, designation_no, no_generations, no_of_parent_sa
   mean_score = total_scores/offspring_pool_size
   print(f"mean_score: {mean_score}")
 
-  return final_pool['combinations']
+  return final_pool['combinations'], mean_score
