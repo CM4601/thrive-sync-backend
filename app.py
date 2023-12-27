@@ -2,9 +2,10 @@ import numpy as np
 from flask_cors import CORS
 from flask import Flask, request, jsonify
 import pandas as pd
-from io import StringIO
 from model_loader import loader
 from error_handler import *
+from SGA import sga_pre_processor, SimpleGeneticAlgorithm
+from func_timeout import func_timeout, FunctionTimedOut
 
 # Iniatlize a Flask app
 app = Flask('app')
@@ -86,34 +87,13 @@ def generate_team():
       if 'Number of generations' not in request.form:
         raise NoNumGenerationsError
       
-      # change here
-      df0 = pd.read_csv(csv_file)
-      print(df0.head())
+      pre_processed_data = sga_pre_processor(csv_file= csv_file, designation= designation)
+      try:
+        respone = func_timeout(6, SimpleGeneticAlgorithm, args=(pre_processed_data, designation, no_generations))
+        return jsonify({ "status": 200, "respone": respone })
       
-      respone = [
-        [-1.0, 7.0, 6.1],
-        [1.0, 4.0, 6.0],
-        [1.0, 6.0, 7.6],
-        [-1.0, 8.0, 8.3],
-        [-1.0, 5.0, 6.8],
-        [1.0, 8.0, 7.5],
-        [-1.0, 4.0, 6.3],
-        [-1.0, 6.0, 6.5],
-        [-1.0, 5.0, 5.9],
-        [-1.0, 8.0, 8.2],
-        [1.0, 6.0, 7.5],
-        [1.0, 6.0, 9.1],
-        [-1.0, 5.0, 7.6],
-        [-1.0, 6.0, 8.2],
-        [1.0, 5.0, 6.6],
-        [-1.0, 5.0, 6.9],
-        [-1.0, 5.0, 4.7],
-        [1.0, 7.0, 8.5],
-        [1.0, 7.0, 7.2],
-        [-1.0, 4.0, 3.3]
-      ]
-
-      return jsonify({ "status": 200, "respone": respone })
+      except FunctionTimedOut:
+        return jsonify({"message": "Function timed out after 1 minute."}), 504
     
     except NoCSVFileError as csv:
       return jsonify({"status": 500, "message": str(csv)})
