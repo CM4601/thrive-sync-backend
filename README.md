@@ -32,6 +32,7 @@ ThriveSync is an genetic alorithms based state-of-the-art tool to calculate burn
 ThriveSync's backend infrastructure is crafted with precision using Python and Flask, technologies renowned for their flexibility and scalability. This robust system seamlessly collaborates with the frontend, ensuring a cohesive and responsive user experience.
 
 ## Repository Structure
+```
 |   .gitignore
 |   README.md
 |   Genetic_algorithm.ipynb
@@ -52,3 +53,4 @@ ThriveSync's backend infrastructure is crafted with precision using Python and F
 \---test
     |   test.csv
     |   test.py
+```
