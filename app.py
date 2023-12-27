@@ -1,6 +1,8 @@
 import numpy as np
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from flask import Flask, request, jsonify
+import pandas as pd
+from io import StringIO
 from model_loader import loader
 from error_handler import *
 
@@ -83,6 +85,10 @@ def generate_team():
       
       if 'Number of generations' not in request.form:
         raise NoNumGenerationsError
+      
+      # change here
+      df0 = pd.read_csv(csv_file)
+      print(df0.head())
       
       respone = [
         [-1.0, 7.0, 6.1],
