@@ -4,7 +4,7 @@ import json
 api_endpoint = 'http://localhost:5000/api/predictBurnOut'
 
 # Mock designation variable
-designation = 1
+designation = 3
 
 # Create a dictionary with two integer values
 json_data = {'Designation': designation, 'WFH Setup Available': 'No', 'Resource Allocation': 1.0, 'Mental Fatigue Score': 1.8}
