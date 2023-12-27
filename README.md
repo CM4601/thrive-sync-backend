@@ -9,23 +9,19 @@
 
   <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Jupyter+Notebook&color=F37626&logo=Jupyter&logoColor=FFFFFF&label=" alt="Jupyter Notebook">
 
-  <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Numpy&color=013243&logo=Numpy&logoColor=white" alt="Numpy">
-
   <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Flask&color=000000&logo=Flask&logoColor=FFFFFF&label=" alt="Flask">
 
-  <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Flask+CORS&color=000000&logo=Flask&logoColor=FFFFFF&label=" alt="Flask CORS">
+  <img style="margin:5px;" src="https://img.shields.io/badge/Pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
 
-  <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Pandas&color=150458&logo=Pandas&logoColor=white" alt="Pandas">
+  <img style="margin:5px;" src="https://img.shields.io/badge/NumPy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" alt="Numpy">
 
   <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Func+Timeout&color=3775A9&logo=Func+Timeout&logoColor=FFFFFF&label=" alt="Func Timeout">
 
-  <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Sklearn&color=F7931E&logo=scikit-learn&logoColor=white" alt="Scikit Learn">
+  <img style="margin:5px;" src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn">
 
   <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Requests&color=009688&logo=Requests&logoColor=FFFFFF&label=" alt="Requests">
 
   <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=JSON&color=000000&logo=json&logoColor=FFFFFF&label=" alt="JSON">
-
-  <img style="margin:5px;" src="https://img.shields.io/static/v1?style=for-the-badge&message=Linear+Regression&color=3776AB&logo=scikit-learn&logoColor=white" alt="Linear Regression">
 
 </div>
 
